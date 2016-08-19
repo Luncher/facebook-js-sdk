@@ -1,0 +1,31 @@
+{
+  "name": "facebook-sdk",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "ava --verbose",
+    "build": "browserify index.js -o output/facebook-wrapper.js -t [ babelify --presets [ es2015 ] ]",
+    "watch": "watchify index.js -o /data/tangide.data/5/495ba8d6a2294514ad95dc1ce38e0e5f/facebook-wrapper.js --debug --verbose -t [ babelify --presets [es2015] ] "
+  },
+  "babel": {
+    "presets": ["es2015"],
+    "plugins": ["transform-runtime"]
+  },
+  "ava": {
+    "require": ["babel-register"]
+  },
+  "keywords": [],
+  "author": "lebron <gakiclin@gmail.com> (https://github.com/Luncher)",
+  "license": "MIT",
+  "dependencies": {
+    "debug": "^2.2.0"
+  },
+  "devDependencies": {
+    "ava": "^0.16.0",
+    "babel-cli": "^6.11.4",
+    "babel-preset-es2015": "^6.13.2",
+    "babelify": "^7.3.0",
+    "watchify": "^3.7.0"
+  }
+}
