@@ -4,16 +4,15 @@ Based browserify and es6. facebook-js-sdk wrapper
 
 ## How to use
 
-- `git clone`
-
-- `npm install`
-
-- `npm test`
+``` shell
+ git clone
+ npm install
+ npm test
+```
 
 ### build
 
  `npm run build` or `npm run watch` for debug
-
 
 ---
 
@@ -27,3 +26,7 @@ Based browserify and es6. facebook-js-sdk wrapper
 - [ ] challenge
 - [ ] notifications
 - [ ] playment
+
+---
+
+## License [MIT](https://opensource.org/licenses/MIT)
