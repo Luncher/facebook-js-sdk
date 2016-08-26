@@ -27,6 +27,19 @@ function makeRquest(options) {
   });
 }
 
+ChallengeService.prototype.sendAppRequest = function(userid, message, callback) {
+  let options = {message, action_type: 'TURN'};
+
+  graphService.appRequest.post(userid, options)
+  .then(function(resp) {
+    callback(null, resp);
+  })
+  .catch(function(err) {
+    callback(err);
+  });
+};
+
+// yinlijun 267718550281468
 ChallengeService.prototype.send = function(to, message, callback, action_type) {
   let that = this;
   let options = {};

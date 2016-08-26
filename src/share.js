@@ -130,6 +130,37 @@ ShareService.prototype.shareByCustomize = function(action_type, params, callback
   return;
 };
 
+/**
+ * https://developers.facebook.com/docs/graph-api/reference/user/feed
+ */
+ShareService.prototype.shareUserFeed = function(userId, message, link, place, callback) {
+  let options = {};
+
+  if(typeof place === 'function') {
+    callback = place;
+    place = '';
+  }
+
+  if(typeof link === 'function') {
+    place = '';
+    callback = link;
+    link = {};
+  }
+
+  options.link = link;
+  options.place = place;
+  options.message = message;
+  graphAPIService.userFeed(userId, options)
+  .then(function(resp) {
+    callback(null, resp);
+  })
+  .catch(function(err) {
+    callback(err);    
+  });
+
+  return;
+};
+
 export function initShareService() {
   let service = new ShareService();
   serviceManager.registerService('share', service);

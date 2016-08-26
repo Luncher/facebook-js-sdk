@@ -118,6 +118,29 @@ LoginService.prototype.setUserStatus = function(status) {
   this.userStatus.status = status;
 };
 
+LoginService.prototype.checkLoginStatus = function(callback) {
+  const that = this;
+
+  if(this.userStatus.status === LoginStatus.connected && callback) {
+    miscService.asyncCallback(null, this.userStatus, callback);
+    return;
+  }
+
+  FB.getLoginStatus(function(resp) {
+    logService.debug('checkLoginStatus', resp);
+    if(resp.status === LoginStatus.connected) {
+      that.userStatus.status = resp.status;
+      that.userStatus.authResponse = resp.authResponse;
+    }
+    else {
+      logService.debug('checkLoginStatus fail');
+    }
+    if(typeof callback === 'function') {
+      callback(null, resp);
+    }
+  });
+};
+
 function onAuthResponseChange(response) {
   if(response.status === 'connected') {
     let logService = serviceManager.getService('log');
@@ -154,4 +177,5 @@ export function initLoginService() {
 
   FB.Event.subscribe('auth.authResponseChange', onAuthResponseChange);
   FB.Event.subscribe('auth.statusChange', onStatusChange);
+  // service.checkLoginStatus();
 }

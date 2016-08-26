@@ -6,7 +6,6 @@ let graphService = null;
 
 
 function NotificationService() {
-
 }
 
 NotificationService.prototype.send = function(id, template, callback) {
