@@ -20,7 +20,7 @@ Based browserify and es6. facebook-js-sdk wrapper
 ## features
 
 - [x] login
-- [ ] share
+- [x] share
 - [ ] graph_api
 - [ ] achievement
 - [ ] app_event
