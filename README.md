@@ -1,5 +1,5 @@
 
-  [![build status][travis-image]][travis-url]
+  [![Build Status](https://travis-ci.org/Luncher/facebook-js-sdk.svg?branch=master)](https://travis-ci.org/Luncher/facebook-js-sdk)
 
 
 # facebook-js-sdk
