@@ -1,5 +1,5 @@
 
-[![build status][travis-image]][travis-url]
+  [![build status][travis-image]][travis-url]
 
 # facebook-js-sdk
 
