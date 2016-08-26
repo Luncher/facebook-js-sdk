@@ -1,3 +1,6 @@
+
+[![build status][travis-image]][travis-url]
+
 # facebook-js-sdk
 
 Based browserify and es6. facebook-js-sdk wrapper
