@@ -30,4 +30,6 @@ Based browserify and es6. facebook-js-sdk wrapper
 
 ---
 
-## License [MIT](https://opensource.org/licenses/MIT)
+## licenses
+
+[MIT](https://opensource.org/licenses/MIT)
